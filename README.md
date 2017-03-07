@@ -51,7 +51,7 @@ eval g++ -std=c++11 -o output_executable_filename input_cpp_filename $libs
 * Download [OpenCV](http://opencv.org)
   - Follow [this instruction](http://docs.opencv.org/2.4/doc/tutorials/introduction/windows_install/windows_install.html) to install OpenCV in Windows
   - Read [this instruction](http://docs.opencv.org/2.4/doc/tutorials/introduction/windows_visual_studio_Opencv/windows_visual_studio_Opencv.html) to know how to build an OpenCV application in Visual Studio
-  - If you still cannot install or use OpenCV in Visual Studio, I won't be able to even care because I created this repo when I was using Linux
+  - If you still cannot install nor use OpenCV in Visual Studio, I won't be able to even care because I created this repo when I was using Linux
 
 #### Compilation and Execution
 
