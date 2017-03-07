@@ -5,7 +5,7 @@ using namespace std;
 using namespace cv;
 
 int main () {
-  double alpha, beta, input;
+  double alpha, beta;
   auto srcalpha = imread("image/alpha");
   auto srcbeta = imread("image/beta");
   cout << "Enter alpha: ";
