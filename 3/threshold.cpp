@@ -27,7 +27,7 @@ int main ();
 void demo (int, void *);
 
 int main () {
-  source = imread("bottles");
+  source = imread("image/bottles");
   cvtColor(source, gray, COLOR_RGB2GRAY);
   namedWindow(window_name);
   createTrackbar(trackbar_type, window_name, &threshold_type, max_type, demo);

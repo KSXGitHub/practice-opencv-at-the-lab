@@ -21,7 +21,7 @@ void dilation (int, void *);
 void morp (int, int, Mat &, string, bool);
 
 int main () {
-  source = imread("lena");
+  source = imread("image/lena");
   namedWindow("erosion");
   namedWindow("dilation");
   moveWindow("dilation", source.cols, 0);
