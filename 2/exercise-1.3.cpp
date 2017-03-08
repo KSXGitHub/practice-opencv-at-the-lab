@@ -1,0 +1,15 @@
+#include <iostream>
+#include <opencv2/core/core.hpp>
+#include <opencv2/highgui/highgui.hpp>
+
+using namespace std;
+using namespace cv;
+
+int main () {
+  Mat mat(500, 500, CV_8UC1, Scalar::all(0));
+  const auto title = "The Random Matrix";
+  namedWindow(title);
+  imshow(title, mat);
+  waitKey();
+  return 0;
+}
