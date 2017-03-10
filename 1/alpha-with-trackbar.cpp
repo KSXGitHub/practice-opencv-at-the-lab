@@ -5,7 +5,7 @@
 using namespace std;
 using namespace cv;
 
-const auto alpha_max = 100;
+const int alpha_max = 100;
 Mat alpha_img, beta_img;
 const string window_name = "Mix two images";
 
@@ -15,7 +15,7 @@ void onSliderRolls (int, void *);
 int main () {
   alpha_img = imread("image/alpha");
   beta_img = imread("image/beta");
-  auto alpha = 50;
+  int alpha = 50;
   namedWindow(window_name);
   createTrackbar("Alpha/Beta (%):", window_name, &alpha, alpha_max, onSliderRolls);
   onSliderRolls(alpha, NULL);
@@ -25,8 +25,8 @@ int main () {
 
 void onSliderRolls (int alpha, void *) {
   cout << "Alpha: " << alpha << '%' << endl;
-  const auto actual_alpha = double(alpha) / alpha_max;
-  const auto actual_beta = 1.0f - actual_alpha;
+  const int actual_alpha = double(alpha) / alpha_max;
+  const int actual_beta = 1.0f - actual_alpha;
   Mat mixed_img;
   addWeighted(alpha_img, actual_alpha, beta_img, actual_beta, 0.0f, mixed_img);
   imshow(window_name, mixed_img);

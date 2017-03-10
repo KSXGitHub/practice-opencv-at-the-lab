@@ -24,7 +24,7 @@ int main () {
   
   // Initialize UI
   namedWindow(window_name);
-  auto lowThreshold = 0;
+  int lowThreshold = 0;
   createTrackbar("Minimum Threshold:", window_name, &lowThreshold, 255, cannyThreshold);
   
   // First frame

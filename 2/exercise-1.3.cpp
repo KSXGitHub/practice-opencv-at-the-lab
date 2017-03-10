@@ -7,7 +7,7 @@ using namespace cv;
 
 int main () {
   Mat mat(500, 500, CV_8UC1, Scalar::all(0));
-  const auto title = "The Random Matrix";
+  const string title = "The Random Matrix";
   namedWindow(title);
   imshow(title, mat);
   waitKey();

@@ -6,11 +6,11 @@
 using namespace std;
 using namespace cv;
 
-auto threshold_value = 0;
-auto threshold_type = 3;
-const auto max_value = 255;
-const auto max_type = 4;
-const auto max_bin_value = 255;
+int threshold_value = 0;
+int threshold_type = 3;
+const int max_value = 255;
+const int max_type = 4;
+const int max_bin_value = 255;
 
 Mat source, target, gray;
 const string window_name = "Threshold Demostration";

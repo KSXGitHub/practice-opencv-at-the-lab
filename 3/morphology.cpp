@@ -7,12 +7,12 @@ using namespace std;
 using namespace cv;
 
 Mat source, erosion_target, dilation_target;
-auto erosion_elem = 0;
-auto erosion_size = 0;
-auto dilation_elem = 0;
-auto dilation_size = 0;
-const auto max_elem = 2;
-const auto max_size = 21;
+int erosion_elem = 0;
+int erosion_size = 0;
+int dilation_elem = 0;
+int dilation_size = 0;
+const int max_elem = 2;
+const int max_size = 21;
 const int morp_elements [] = {MORPH_RECT, MORPH_CROSS, MORPH_ELLIPSE};
 
 int main ();
@@ -44,9 +44,9 @@ void dilation (int, void *) {
 }
 
 void morp (int element_index, int isize, Mat & target, string window_name, bool method) {
-  auto type = morp_elements[element_index];
-  auto size = 2 * isize + 1;
-  auto element = getStructuringElement(type, Size(size, size), Point(isize, isize));
+  int type = morp_elements[element_index];
+  int size = 2 * isize + 1;
+  int element = getStructuringElement(type, Size(size, size), Point(isize, isize));
   if (method) {
     erode(source, target, element);
   } else {

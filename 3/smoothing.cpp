@@ -6,18 +6,18 @@
 
 #define CAPTION(caption) if (displayCaption(caption)) return 0
 #define DISPLAY if (displayBlurred()) return 0
-#define LOOP(i) for (auto i = 1; i < MAX::KERNEL_LENGTH; i += 2)
+#define LOOP(i) for (int i = 1; i < MAX::KERNEL_LENGTH; i += 2)
 
 using namespace std;
 using namespace cv;
 
 namespace DELAY {
-  const auto CAPTION = 1500;
-  const auto BLUR = 100;
+  const int CAPTION = 1500;
+  const int BLUR = 100;
 }
 
 namespace MAX {
-  const auto KERNEL_LENGTH = 31;
+  const int KERNEL_LENGTH = 31;
 }
 
 string window_name = "Smoothing Demonstration";

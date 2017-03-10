@@ -6,8 +6,8 @@ using namespace cv;
 
 int main () {
   double alpha, beta;
-  auto srcalpha = imread("image/alpha");
-  auto srcbeta = imread("image/beta");
+  int srcalpha = imread("image/alpha");
+  int srcbeta = imread("image/beta");
   cout << "Enter alpha: ";
   cin >> alpha;
   if (alpha < 0 || alpha > 1) {

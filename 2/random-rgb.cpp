@@ -8,7 +8,7 @@ using namespace cv;
 int main () {
   Mat mat(512, 512, CV_8UC3);
   randu(mat, 0, 255);
-  const auto title = "The Random Matrix";
+  const string title = "The Random Matrix";
   cout << title << ":\n" << mat << endl;
   namedWindow(title);
   imshow(title, mat);

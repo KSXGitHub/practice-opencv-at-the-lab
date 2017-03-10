@@ -9,7 +9,7 @@ int main () {
 
   // Original image
   const string original_window_name = "Original Image";
-  const auto original_img = imread("image/beta");
+  const Mat original_img = imread("image/beta");
   namedWindow(original_window_name);
   imshow(original_window_name, original_img);
 
