@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <ctime>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 
@@ -10,6 +11,8 @@ int main ();
 Mat doPyrDown (Mat);
 
 int main () {
+  const string output_prefix = "output/exercise-2.frame-at-";
+  const string output_suffix = ".jpg";
   CvCapture * capture = cvCreateCameraCapture(0);
   IplImage * frame;
   const string window_name = "Demo";
@@ -19,6 +22,7 @@ int main () {
     if (frame) {
       Mat smallerframe = doPyrDown(Mat(frame));
       imshow(window_name, smallerframe);
+      imwrite(output_prefix + to_string(time(NULL)) + output_suffix, smallerframe);
     } else {
       break;
     }
