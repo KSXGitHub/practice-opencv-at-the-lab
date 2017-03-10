@@ -13,21 +13,17 @@ Mat doPyrDown (Mat);
 int main () {
   const string output_prefix = "output/exercise-2.frame-at-";
   const string output_suffix = ".jpg";
-  CvCapture * capture = cvCreateCameraCapture(0);
-  IplImage * frame;
+  VideoCapture capture(0);
   const string window_name = "Demo";
   namedWindow(window_name);
   do {
-    frame = cvQueryFrame(capture);
-    if (frame) {
-      Mat smallerframe = doPyrDown(Mat(frame));
-      imshow(window_name, smallerframe);
-      imwrite(output_prefix + to_string(int(time(NULL))) + output_suffix, smallerframe);
-    } else {
-      break;
-    }
+    Mat frame;
+    capture >> frame;
+    Mat smallerframe = doPyrDown(frame);
+    imshow(window_name, smallerframe);
+    imwrite(output_prefix + to_string(int(time(NULL))) + output_suffix, smallerframe);
   } while (waitKey(33) < 0);
-  cvReleaseCapture(&capture);
+  capture.release();
   return 0;
 }
 

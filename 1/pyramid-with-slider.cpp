@@ -16,8 +16,7 @@ Mat doPyrDown (Mat, int = 1);
 Mat doPyrUp (Mat, int = 1);
 
 int main () {
-  CvCapture * capture = cvCreateCameraCapture(0);
-  IplImage * frame;
+  VideoCapture capture(0);
   const string window_name_source = "Original";
   const string window_name_scaled = "Scaled Image";
   namedWindow(window_name_source);
@@ -25,17 +24,12 @@ int main () {
   moveWindow(window_name_scaled, 255, 12);
   createTrackbar("Zoom", window_name_source, &slider_value, slider_max);
   do {
-    frame = cvQueryFrame(capture);
-    if (frame) {
-      Mat sourceframe = frame;
-      Mat scaledframe = scale(sourceframe);
-      imshow(window_name_source, sourceframe);
-      imshow(window_name_scaled, scaledframe);
-    } else {
-      break;
-    }
+    Mat sourceframe;
+    capture >> sourceframe;
+    Mat scaledframe = scale(sourceframe);
+    imshow(window_name_source, sourceframe);
+    imshow(window_name_scaled, scaledframe);
   } while (waitKey(33) < 0);
-  cvReleaseCapture(&capture);
   return 0;
 }
 
