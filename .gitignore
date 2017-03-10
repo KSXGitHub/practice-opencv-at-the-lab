@@ -1,5 +1,4 @@
 *.out
-*.mp4
 *.tmp
 *.vscode
 output/*
