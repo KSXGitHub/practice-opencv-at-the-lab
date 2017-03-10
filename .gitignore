@@ -1,5 +1,5 @@
 *.out
 *.tmp
 *.vscode
-output/*
-!output/README.md
+*/output/*
+!*/output/README.md
