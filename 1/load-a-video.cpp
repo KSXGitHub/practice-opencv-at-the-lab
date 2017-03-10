@@ -6,7 +6,7 @@ using namespace cv;
 
 int main () {
   namedWindow("window");
-  VideoCapture video("video/.webm");
+  VideoCapture video("video/.mp4");
   for ( ; ; ) {
     Mat frame;
     video >> frame;
