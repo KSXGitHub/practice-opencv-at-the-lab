@@ -22,7 +22,7 @@ int main () {
     if (frame) {
       Mat smallerframe = doPyrDown(Mat(frame));
       imshow(window_name, smallerframe);
-      imwrite(output_prefix + to_string(time(NULL)) + output_suffix, smallerframe);
+      imwrite(output_prefix + to_string(int(time(NULL))) + output_suffix, smallerframe);
     } else {
       break;
     }
