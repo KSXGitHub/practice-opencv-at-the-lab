@@ -8,7 +8,7 @@ using namespace cv;
 
 int main () {
   const string window_name = "Camera";
-  const string output_file = string("exercise-4.recorded-in-") + to_string(time(0)) + string(".avi");
+  const string output_file = string("output/exercise-4.recorded-in-") + to_string(time(0)) + string(".avi");
   VideoCapture input(0);
   if (!input.isOpened()) {
     cerr << "Could not connect to camera\nExiting.\n";
