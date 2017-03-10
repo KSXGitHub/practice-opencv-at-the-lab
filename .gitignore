@@ -2,3 +2,5 @@
 *.mp4
 *.tmp
 *.vscode
+output/*
+!output/README.md
