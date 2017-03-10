@@ -23,7 +23,7 @@ int main () {
   cvtColor(source, source_gray, COLOR_BGR2GRAY);
   
   // Initialize UI
-  namedWindow(window_name);
+  namedWindow(window_name, CV_WINDOW_NORMAL);
   int lowThreshold = 0;
   createTrackbar("Minimum Threshold:", window_name, &lowThreshold, 255, cannyThreshold);
   

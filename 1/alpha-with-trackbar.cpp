@@ -16,7 +16,7 @@ int main () {
   alpha_img = imread("image/alpha");
   beta_img = imread("image/beta");
   int alpha = 50;
-  namedWindow(window_name);
+  namedWindow(window_name, CV_WINDOW_NORMAL);
   createTrackbar("Alpha/Beta (%):", window_name, &alpha, alpha_max, onSliderRolls);
   onSliderRolls(alpha, NULL);
   waitKey();

@@ -21,7 +21,7 @@ int main () {
     return 2;
   }
   cerr << "Recording to " << output_file << endl;
-  namedWindow(window_name);
+  namedWindow(window_name, CV_WINDOW_NORMAL);
   do {
     Mat frame;
     input >> frame;

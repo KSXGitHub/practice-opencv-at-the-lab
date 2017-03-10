@@ -31,7 +31,7 @@ int main () {
   // Graphical User Interface
   int canny_threshold = canny_threshold_initial_value;
   int accumulator_threshold = accumulator_threshold_initial_value;
-  namedWindow(window_name);
+  namedWindow(window_name, CV_WINDOW_NORMAL);
   createTrackbar(canny_threshold_trackbar_name, window_name, &canny_threshold, max_canny_threshold);
 
   return 0;

@@ -15,7 +15,7 @@ int main () {
     return 1;
   }
   beta = 1 - alpha;
-  namedWindow("window", WINDOW_AUTOSIZE);
+  namedWindow("window", CV_WINDOW_NORMAL);
   Mat dst;
   addWeighted(srcalpha, alpha, srcbeta, beta, 0, dst);
   imshow("window", dst);

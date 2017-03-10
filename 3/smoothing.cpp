@@ -30,7 +30,7 @@ bool displayBlurred (int = DELAY::BLUR);
 int main () {
 
   // Create window
-  namedWindow(window_name);
+  namedWindow(window_name, CV_WINDOW_NORMAL);
 
   // Load images
   source = imread("image/lena");

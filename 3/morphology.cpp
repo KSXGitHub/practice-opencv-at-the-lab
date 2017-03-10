@@ -22,8 +22,8 @@ void morp (int, int, Mat &, string, bool);
 
 int main () {
   source = imread("image/lena");
-  namedWindow("erosion");
-  namedWindow("dilation");
+  namedWindow("erosion", CV_WINDOW_NORMAL);
+  namedWindow("dilation", CV_WINDOW_NORMAL);
   moveWindow("dilation", source.cols, 0);
   createTrackbar("Element\n- 0: Rect\n- 1: Cross\n- 2: Ellipse", "erosion", &erosion_elem, max_elem, erosion);
   createTrackbar("Kernel Size\n (2n + 1)", "erosion", &erosion_size, max_size, erosion);
