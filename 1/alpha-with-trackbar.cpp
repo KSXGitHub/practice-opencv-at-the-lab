@@ -25,8 +25,8 @@ int main () {
 
 void onSliderRolls (int alpha, void *) {
   cout << "Alpha: " << alpha << '%' << endl;
-  const int actual_alpha = double(alpha) / alpha_max;
-  const int actual_beta = 1.0f - actual_alpha;
+  const double actual_alpha = double(alpha) / alpha_max;
+  const double actual_beta = 1.0f - actual_alpha;
   Mat mixed_img;
   addWeighted(alpha_img, actual_alpha, beta_img, actual_beta, 0.0f, mixed_img);
   imshow(window_name, mixed_img);

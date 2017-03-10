@@ -46,7 +46,7 @@ void dilation (int, void *) {
 void morp (int element_index, int isize, Mat & target, string window_name, bool method) {
   int type = morp_elements[element_index];
   int size = 2 * isize + 1;
-  int element = getStructuringElement(type, Size(size, size), Point(isize, isize));
+  Mat element = getStructuringElement(type, Size(size, size), Point(isize, isize));
   if (method) {
     erode(source, target, element);
   } else {
