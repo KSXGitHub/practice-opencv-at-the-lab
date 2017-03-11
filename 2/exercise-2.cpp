@@ -12,7 +12,7 @@ void displaySingleImage (const Mat, const string, const int, const int);
 int main () {
 
   // Load image and create matrices
-  Mat source = imread("image/.jpg");
+  Mat source = imread("image/.jpeg");
   Mat target(source.size(), source.type());
   Mat graysc(target.size(), CV_8UC1);
   cvtColor(source, graysc, CV_RGB2GRAY);
