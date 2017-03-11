@@ -6,6 +6,8 @@
 using namespace std;
 using namespace cv;
 
+const int delay = 33;
+
 int main () {
   const string window_name = "Camera";
   const string output_file = string("output/exercise-4.recorded-in-") + to_string(time(0)) + string(".avi");
@@ -15,7 +17,7 @@ int main () {
     return 1;
   }
   Size size(input.get(CV_CAP_PROP_FRAME_WIDTH), input.get(CV_CAP_PROP_FRAME_HEIGHT));
-  VideoWriter output(output_file, CV_FOURCC('M', 'J', 'P', 'G'), 10, size, true);
+  VideoWriter output(output_file, CV_FOURCC('M', 'J', 'P', 'G'), 1000.0f / double(delay), size, true);
   if (!output.isOpened()) {
     cerr << "Could not open " << output_file << " to write to\nExiting.\n";
     return 2;
@@ -27,7 +29,7 @@ int main () {
     input >> frame;
     output << frame;
     imshow(window_name, frame);
-  } while (waitKey(33) < 0);
+  } while (waitKey(delay) < 0);
   cerr << "Done.\n";
   return 0;
 }
