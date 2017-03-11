@@ -10,6 +10,7 @@ int main () {
   for ( ; ; ) {
     Mat frame;
     video >> frame;
+    if (frame.empty()) break;
     imshow("window", frame);
     if (waitKey(30) >= 0) break;
   }

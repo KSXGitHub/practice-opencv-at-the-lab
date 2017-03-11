@@ -23,6 +23,7 @@ int main () {
   do {
     Mat frame;
     video >> frame;
+    if (frame.empty()) break;
     imshow(window_name, frame);
   } while (waitKey(delay) < 0);
   return 0;
