@@ -11,7 +11,7 @@ int main () {
   namedWindow(right_window, CV_WINDOW_NORMAL);
   moveWindow(right_window, 300, 25);
   VideoCapture left_video("video/.mp4");
-  VideoCapture right_video("video/.m4a");
+  VideoCapture right_video("video/.m4v");
   const int delay = 32;
   do {
     Mat left_frame, right_frame;
