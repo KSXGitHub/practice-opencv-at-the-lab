@@ -12,18 +12,19 @@ void displaySingleImage (const Mat, const string, const int, const int);
 int main () {
 
   // Load image and create matrices
-  Mat source = imread("image/.jpeg");
+  Mat source = imread("image/legobatman.jpg");
   Mat target(source.size(), source.type());
   Mat graysc(target.size(), CV_8UC1);
   cvtColor(source, graysc, CV_RGB2GRAY);
 
-  int max_gray_x = 0, max_gray_y = 0;
+  unsigned char max_gray_pixel = 0;
 
   // Iterate and manipulate pixels
   for (int i = 0; i != target.cols; ++i) {
     for (int j = 0; j != target.rows; ++j) {
 
       Vec3b & target_rgb = target.at<Vec3b>(j, i);
+      unsigned char gray_pixel = graysc.at<unsigned char>(j, i);
       
       // Region ((0, 0), (50, 50)) is black (rgb = [0, 0, 0])
       if (i > 50 || j > 50) {
@@ -36,22 +37,24 @@ int main () {
       }
 
       // Get maximum grayscale pixel
-      if (graysc.at<unsigned char>(max_gray_y, max_gray_x) < graysc.at<unsigned char>(j, i)) {
-        max_gray_x = i;
-        max_gray_y = j;
+      if (max_gray_pixel < gray_pixel) {
+        max_gray_pixel = gray_pixel;
       }
 
     }
   }
 
   // Set highest grayscale pixels to zeros
-  cout
-    << "Highest grayscale pixel is at ("
-    << max_gray_x << ", " << max_gray_y
-    << ") and equal to " << source.at<Vec3b>(max_gray_y, max_gray_x)
-    << endl
-  ;
-  target.at<Vec3b>(max_gray_y, max_gray_x) = Vec3b(0, 0, 0);
+  cout << "Highest grayscale pixel value is " << int(max_gray_pixel) << endl;
+  for (int i = 0; i != graysc.cols; ++i) {
+    for (int j = 0; j != graysc.rows; ++j) {
+      unsigned char & gray_pixel = graysc.at<unsigned char>(j, i);
+      if (gray_pixel == max_gray_pixel) {
+        cout << "Found pixel at (" << i << ", " << j << ") with value of " << target.at<Vec3b>(j, i) << " has the highest grayscale value\n";
+        gray_pixel = 0;
+      }
+    }
+  }
   
   // Display result
   displaySingleImage(source, "Original", 100, 100);
