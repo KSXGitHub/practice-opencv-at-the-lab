@@ -11,6 +11,7 @@ int main () {
   const string original_window_name = "Original Image";
   const Mat original_img = imread("image/beta");
   namedWindow(original_window_name, CV_WINDOW_NORMAL);
+  moveWindow(original_window_name, 0, 0);
   imshow(original_window_name, original_img);
 
   // Gray and Canny image

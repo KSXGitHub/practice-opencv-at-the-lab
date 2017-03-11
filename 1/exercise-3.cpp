@@ -21,6 +21,7 @@ int main () {
   int ratio = 0;
   source = imread("image/2x");
   imshow(window_name_source, source);
+  moveWindow(window_name_source, 0, 0);
   moveWindow(window_name_scaled, source.cols, 0);
   createTrackbar("Pyramid Down Ratio", window_name_source, &ratio, ratio_max, onSliderRolls);
   onSliderRolls(ratio, NULL);

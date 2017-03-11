@@ -21,6 +21,7 @@ int main () {
   const string window_name_scaled = "Scaled Image";
   namedWindow(window_name_source);
   namedWindow(window_name_scaled);
+  moveWindow(window_name_source, 0, 0);
   moveWindow(window_name_scaled, 255, 12);
   createTrackbar("Zoom", window_name_source, &slider_value, slider_max);
   do {

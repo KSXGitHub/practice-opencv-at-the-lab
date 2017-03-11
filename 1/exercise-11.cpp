@@ -9,6 +9,7 @@ int main () {
   const string right_window = "Right Video";
   namedWindow(left_window, CV_WINDOW_NORMAL);
   namedWindow(right_window, CV_WINDOW_NORMAL);
+  moveWindow(left_window, 0, 0);
   moveWindow(right_window, 300, 25);
   VideoCapture left_video("video/.mp4");
   VideoCapture right_video("video/.m4v");
