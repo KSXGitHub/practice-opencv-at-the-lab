@@ -17,9 +17,8 @@ int main () {
     Mat left_frame, right_frame;
     left_video >> left_frame;
     right_video >> right_frame;
-    const bool left_empty = left_frame.empty(), right_empty = right_frame.empty();
-    if (!left_empty) imshow(left_window, left_frame);
-    if (!right_empty) imshow(right_window, right_frame);
+    if (!left_frame.empty()) imshow(left_window, left_frame);
+    if (!right_frame.empty()) imshow(right_window, right_frame);
   } while (waitKey(delay) < 0);
   return EXIT_SUCCESS;
 }
