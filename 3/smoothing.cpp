@@ -33,7 +33,7 @@ int main () {
   namedWindow(window_name, CV_WINDOW_NORMAL);
 
   // Load images
-  source = imread("image/lenna");
+  source = imread("image/lena");
 
   // Original Image
   CAPTION("Original Image");

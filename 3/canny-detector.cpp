@@ -16,7 +16,7 @@ void cannyThreshold (int, void *);
 int main () {
 
   // Read the source image
-  source = imread("image/lenna");
+  source = imread("image/lena");
 
   // Convert
   target.create(source.size(), source.type());
